@@ -18,3 +18,40 @@ A data layer that is inserted into a webpage in the form of an object
 ### BRD Sample Document (spreadsheet)
 - 3 sections: Predefined events, Custom Events, Custom Conversion - eVars
 - can separate in as many sections as needed
+
+### Virtual Machine Login
+- login to axis vm
+- login to Adobe Launch with test credentials
+
+### Lifecycle
+- visitor views web page
+- web server returns web page
+- send web beacon (image request) to adobe server
+- send transparent pixel
+- web analysis data stored in report suites
+- analysts can view reports
+
+### Report Suites
+- each report suite is a collection of data
+- global report suite is when data is sent from multiple sites, apps, or experiences into a single global report suite
+
+### Virtual Report Suites
+- segmented views that function as regular report suites
+- control user access to specific segments of data
+- instantly retroactive and editable
+- no limit on number of Virtual
+
+### Data Types
+#### Dimensions
+- typically describe how reports should be interpreted row by row
+    - city, state, country
+    - by browser
+    - by campaign name
+    - by product
+
+#### Metrics
+- measure actions and provide further context to the dimension selected
+    - number of page views
+    - number of cc apps processed
+    - number of orders
+    - amount of revenue generated
