@@ -55,7 +55,8 @@ s.prop20 = "Gold"
 
 ## Campaign Conversion
 Campaign Variables
-- reports can be named "Customer Aquisition"
+- reports can be named "Customer Aquisition", "Identify Referrer Type (by Country)
+- referrer type is link that resulted in page visit
 - campaign: set of actions that lead to an event/action
 - capture tracking codes
 - set tracking code to a specific landing page
@@ -70,3 +71,14 @@ Use of campaign is used to tell us what is the most affective way to attract a u
 - from emails, ads, promos, etc
 - purpose is to bring more traffic into webiste
 - campaigns will tell us how/best way
+
+### Internal vs External Campaigns
+Internal
+    - drive traffic to one part of your website from another part, or is a "call to action"
+    - should be tracked with a custome conversion variable
+    - data element for internal campaign will be of type query string parameter with value "intcmp"
+External
+    - drive traffic from another source completely outside of your website
+    - should be tracked with the campaign variable
+    - is a default variable that exists, go to rule and set the campaign to query parameter: cid
+
