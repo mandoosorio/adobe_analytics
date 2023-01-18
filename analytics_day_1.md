@@ -34,6 +34,7 @@ A data layer that is inserted into a webpage in the form of an object
 ### Report Suites
 - each report suite is a collection of data
 - global report suite is when data is sent from multiple sites, apps, or experiences into a single global report suite
+- Use Page Flow for a good representation on how users navigate through pages
 
 ### Virtual Report Suites
 - segmented views that function as regular report suites
@@ -55,3 +56,32 @@ A data layer that is inserted into a webpage in the form of an object
     - number of cc apps processed
     - number of orders
     - amount of revenue generated
+
+#### Variable Types
+- Dimensions - Traffic Variables (s.props) : page name (change constantly/often)
+- Dimensions - Conversion Variables (eVars) : holds information that lasts longer (session info) search term - leads to success event
+- Metrics - Success events (s.events) : when all steps are completed to get to this event
+- props do not persist between pages: page name, url, etc
+- evars persist until their value is overwritten by another, or expires (session)
+- success events can be key actions, page view can be an event
+
+### Adobe Analytics Extension
+- library management: set report suite
+- general: preset -> utf8
+- link tracking: never track -> domain bc we only want to track anything after (not before) domain (end points)
+    - if use never track, the base url will not appear on data 
+- domain periods: how many sections the domain is divided into by periods (adobedv.servicenow.com) = 3 periods
+
+### Web Install
+- uncheck "load library asynchronously"
+- _satellite.getVar("pageName") where pageName is a data collection item
+- consier how people access your page, how do they get to the landing page 
+
+### Rules
+- naming convention: 06-02 All Pages Rule (90) : the (90) will rank the rule so that it executes after all the numbers before it
+- Page Bottom event type triggers when you are about to leave the page
+
+### Data Element Viewer Browser Script
+https://jimalytics.com/implementation/data-element-viewer-for-adobe-launch/
+``` javascript:(function(){if('undefined'!=typeof _satellite)if(void 0!==_satellite._container){var dataElementValue,dataElementNames=[],dataElementObject={},cleanElementObject={};function checkDataElements(){for(var e in _satellite._container.dataElements)dataElementValue=_satellite.getVar(e),dataElementNames.push(e),''===dataElementValue&&(dataElementValue=' '),dataElementObject[e]=dataElementValue,''!==_satellite.getVar(e)&&_satellite.getVar(e)!==_satellite._container.dataElements[e].defaultValue&&(cleanElementObject[e]=dataElementValue);return{everything:dataElementObject,clean:cleanElementObject}}function displayDataElements(e,t){console.group('RAW Data Elements - Data Element Viewer by Jimalytics - https://jimalytics.com'),console.table(e),console.groupEnd(),console.group('CLEAN Data Elements - Data Element Viewer by Jimalytics - https://jimalytics.com'),console.table(t),console.groupEnd()}function returnData(){var e=checkDataElements();displayDataElements(e.everything,e.clean)}returnData(),window._satellite=window._satellite||{},window._satellite._monitors=window._satellite._monitors||[],window._satellite._monitors.push({ruleTriggered:function(e){returnData()}})}else console.log('Adobe Launch is not present.');else console.log('Adobe Launch is not present.');})(); ```
+- right click bookmark section and add a page, paste this script in url field
