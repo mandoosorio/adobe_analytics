@@ -37,3 +37,18 @@ s.pageName = "Men: Activewear"
 s.channel = "Men"
 s.prop20 = "Gold" 
 ```
+
+### Internal Search Term Capture
+- create data element
+- extension: core
+- data element type: query string parameter
+- force lowercase value true
+- clean text true
+- storage duration: pageview
+- url query string value: q
+- allow capitalization differences: true
+- create/edit rule
+- set variables: eVar -> data element
+- set prop: prop -> duplicate from eVar
+
+- we use an evar to store the value and transfer it into a prop because the eVar will let us hold larger strings (100 char) and if they are duplicated to a prop, the prop length restriction doesn't apply
