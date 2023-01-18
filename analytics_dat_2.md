@@ -82,3 +82,16 @@ External
     - should be tracked with the campaign variable
     - is a default variable that exists, go to rule and set the campaign to query parameter: cid
 
+Campaigns get credit expiration and allocation
+- allocation is used to determine what get the credit (for the visit)
+
+## Implementing Conversion Events
+An event can be when a user adds an item to a cart, or place an order
+
+## Adding Variable Data Through Event
+```
+s.products = ";" + _satellite.getVar('productName');
+```
+
+## Click eEvent CSS Selector
+- syntax: table form .button
