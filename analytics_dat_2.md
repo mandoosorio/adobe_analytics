@@ -52,3 +52,21 @@ s.prop20 = "Gold"
 - set prop: prop -> duplicate from eVar
 
 - we use an evar to store the value and transfer it into a prop because the eVar will let us hold larger strings (100 char) and if they are duplicated to a prop, the prop length restriction doesn't apply
+
+## Campaign Conversion
+Campaign Variables
+- reports can be named "Customer Aquisition"
+- campaign: set of actions that lead to an event/action
+- capture tracking codes
+- set tracking code to a specific landing page
+- access tracking code in the query string of the url
+
+```
+s.campaign = "tracking code"
+s.campaign = "radio_spot_xyz"
+```
+
+Use of campaign is used to tell us what is the most affective way to attract a user to a page
+- from emails, ads, promos, etc
+- purpose is to bring more traffic into webiste
+- campaigns will tell us how/best way
